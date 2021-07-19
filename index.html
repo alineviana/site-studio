@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+<head>
+    <title>Hiring Coders</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/js/bootstrap.min.js">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script>
+        function saveLead() {
+            let listaLeads = window.localStorage.getItem("leads")
+            let leadExist = false
+            let email = document.getElementById("email").value
+    
+
+            if (listaLeads != null) {
+
+                listaLeads = JSON.parse(listaLeads)
+                let index = -1
+                for (var i = 0; i < listaLeads.length; i++ ){
+                    if (listaLeads[i].Email == email) {
+                        index = i
+                    }
+
+                }
+
+                if (index >= 0) {
+                    leadExist = true
+                }
+
+            } else {
+                listaLeads = []
+            }
+
+            if (leadExist == false) {
+
+                let usuario = {
+                    Email: email
+                }
+
+                listaLeads.push(usuario)
+                
+                window.localStorage.setItem("leads", JSON.stringify(listaLeads)) 
+
+                window.alert("Usuário cadastrado com sucesso!")
+
+            } else {
+                window.alert("Usuário já cadastrado!")
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+
+<!-- Barra de Navegação -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Studio Scoda</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown" href="#">Home</a>
+                </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown" href="#sobreostudio">Sobre o Studio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown" href="#nossosprocedimentos">Nossos Procedimentos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown" href="#nossoscontatos">Nossos Contatos</a>
+                    </li>
+             </ul>
+          </div>
+      </div>
+    </nav>
+  </header>
+
+<!-- Banners -->
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/home.gif" class="d-block w-100" alt="Banner sobre promoções">
+        </div>
+          <div class="carousel-item">
+           <a href="#cadastrar"><img src="img/home2.gif" class="d-block w-100" alt="Banner para cadastrar o e-mail"></a> 
+          </div>
+        </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden"></span>
+    </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden"></span>
+      </button>
+</div>
+
+<!-- Sobre o Studio -->
+<div class="container studio" id="sobreostudio">
+    <div class="row">
+        <div class="col-md-7 order-md-2">
+          <hr><h3 class="featurette-heading">SOBRE O STUDIO SCODA</h3><hr>
+          <p class="lead"> O "STUDIO SCODA" atende com todo cuidado e qualidade que as clientes merecem. Os atendimentos são individuais e personalizados, pois cada cliente possui características únicas, que precisam ser levadas em consideração.</p>
+          <p class="lead"> Se você quer receber todo esse carinho e cuidado, entre em contato conosco. Os atendimentos são realizados com hora marcada.</p>
+          <br>
+          <p><a class="btn btn-dark" href="https://api.whatsapp.com/send?phone=5534997749599&text=Gostaria+de+agendar+um+hor%C3%A1rio+" target="_blank"><b>  Agende a sua avaliação!</b></a></p>
+        </div>
+          <div class="col-md-5 order-md-1">
+            <br>
+            <img class="image1" src="img/imagem.jpg">
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Procedimentos -->
+<section class="servicos" id="nossosprocedimentos">
+        <div class="container">
+          <h4 class="title">NOSSOS PROCEDIMENTOS</h4>
+                <div class="row row-cols-8">
+                  <div class="col procedimentos">
+            <div class="zoom"><img class="image" src="img/design.jpg" alt="Imagem de uma sobrancelha"></div>
+                        <p class="subtitle" id="designdesobrancelhas"><b>Design Personalizado de Sobrancelhas</b></p>
+                <p>Tenha o seu olhar valorizado por um design de sobrancelhas personalizado, realizado por meio de mapeamento geométrico facial.</p>
+                  </div>
+                  
+            <div class="col procedimentos">
+              <div class="zoom"><img class="image" src="img/sobrancelhas.jpg" alt="Imagem de Micropigmentação de Sobrancelhas"></div>
+                        <p class="subtitle" id="micropigmentacaodesobrancelhas"><b>Micropigmentação de Sobrancelhas</b></p>
+                        <p>Você também quer ter sobrancelhas lindas? Acordar pronta todos os dias? A micropigmentação poderá resolver todos esses problemas!</p>
+                  </div>
+                  
+            <div class="col procedimentos">
+                      <div class="zoom"><img class="image" src="img/labios.jpg" alt="Imagem de Micropigmentação de Labios"></div>
+                        <p class="subtitle" id="micropigmentacaodelabios"><b>Micropigmentação de Lábios</b></p>
+                        <p>A micropigmentação labial proporciona lábios sem bordas, a correção de lábios pálidos, a correção do desenho e ainda, uma revitalização labial.</p>
+                  </div>
+                  
+            <div class="col procedimentos">
+                      <div class="zoom"><img class="image" src="img/olhos.jpg" alt="Imagem de Micropigmentação de Olhos"></div>
+                      <p class="subtitle" id="micropigmentacaodeolhos"><b>Micropigmentação de Olhos</b></p>
+              <p>Pura delicadeza, muita naturalidade, além de mais facilidade e praticidade no seu dia a dia com este procedimento.</p>
+                  </div>
+                  
+            <div class="col procedimentos">
+                      <div class="zoom"><img class="image" src="img/estrias.jpg" alt="Imagem de Estrias"></div>
+                      <p class="subtitle" id="tratamentoestrias"><b>Tratamento efetivo de Estrias</b></p>
+              <p>Não é camuflagem e não utilizamos tinta. É um tratamento efetivo que proporciona a melhora da aparência, da rugosidade e da profundidade das estrias.</p>
+                  </div>
+                  
+            <div class="col procedimentos">
+                      <div class="zoom"><img class="image" src="img/lifting.jpg" alt="Imagem de Lifting facial"></div>
+                      <p class="subtitle" id="lifting"><b>Lifting Facial, pescoço e colo</b></p>
+              <p>Esta técnica faz com que a aparência do rosto fique melhor, com mais viço e brilho, além de proporcionar uma melhora considerável da flacidez.</p>				
+                  </div>
+            </div>
+      </div>
+</section>
+
+<!-- Cadastre seu e-mail -->
+<div class="container email" id="cadastrar">
+    <div class="row justify-content-center">
+        <div class="col-xs-6 col-md-6">
+            <form>
+                <img src="img/imagem.jpg" alt="Logo" width="72" height="57">
+            <br>
+                <h1 class="subtitle1">Cadastre-se para receber as nossas promoções</h1>
+
+                <div class="form-floating">
+                  <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                  <label for="email">E-mail:</label>
+                </div>
+            <br>
+                <button class="btn btn-lg btn-dark" type="button" onclick="saveLead()">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Contatos -->
+<section>
+    <div class="midias">
+      <hr><h5 class="title" id="nossoscontatos">ACOMPANHE AS NOSSAS REDES SOCIAIS</h5><hr>
+        <div>
+            <a href="https://www.instagram.com/studio_scoda/" target="_blank"><i class="bi-instagram" style="font-size: 2rem; color: rgb(75, 12, 46);"></i></a>&nbsp &nbsp &nbsp 
+            <a href="https://pt-br.facebook.com/studioscoda/" target="_blank"><i class="bi-facebook" style="font-size: 2rem; color: rgb(75, 12, 46);"></i></a>&nbsp &nbsp &nbsp 
+            <a href="https://api.whatsapp.com/send?phone=5534997749599&text=Gostaria+de+agendar+um+hor%C3%A1rio+" target="_blank"><i class="bi-whatsapp" style="font-size: 2rem; color: rgb(75, 12, 46);"></i></a>&nbsp &nbsp &nbsp  
+            <a href="https://www.linkedin.com/in/cristina-scoda-2b1a5086/" target="_blank"><i class="bi-linkedin" style="font-size: 2rem; color: rgb(75, 12, 46);"></i></a>&nbsp &nbsp &nbsp 
+            <a href="https://www.youtube.com/channel/UCaYQmhx37vJ7MdlTLVUqz0w" target="_blank"><i class="bi-youtube" style="font-size: 2rem; color: rgb(75, 12, 46);"></i></a>
+        </div>
+    </div>
+</section>
+  
+<!-- Links -->
+<section class="container link">
+      <hr>
+    <div class="row">
+      <div class="col-6 col-md">
+        <img class="image1" src="img/imagem.jpg" alt="Logo do Studio Scoda">
+      </div>
+      <div class="col-6 col-md">
+        <h6>Home</h6>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#sobreostudio">Sobre o Studio</a></li>
+          <li><a class="link-secondary" href="#cadastrar">Cadastre seu e-mail</a></li>
+        </ul>
+      </div>
+        <div class="col-6 col-md">
+          <h6>Procedimentos</h6>
+          <ul class="list-unstyled text-small">
+            <li><a class="link-secondary" href="#nossosprocedimentos">Design de Sobrancelhas</a></li>
+            <li><a class="link-secondary" href="#nossosprocedimentos">Micropigmentação de Sobrancelhas</a></li>
+            <li><a class="link-secondary" href="#nossosprocedimentos">Micropigmentação de Lábios</a></li>
+            <li><a class="link-secondary" href="#nossosprocedimentos">Micropigmentação de Olhos</a></li>
+            <li><a class="link-secondary" href="#nossosprocedimentos">Tratamento Efetivo de Estrias</a></li>
+            <li><a class="link-secondary" href="#nossosprocedimentos">Lifting Facial, pescoço e colo</a></li>
+          </ul>
+        </div>
+          <div class="col-6 col-md">
+            <h6>Contato</h6>
+            <ul class="list-unstyled text-small">
+              <li><a class="link-secondary" href="https://api.whatsapp.com/send?phone=5534997749599&text=Gostaria+de+agendar+um+hor%C3%A1rio+" target="_blank"><i class="bi bi-telephone"></i>  (34) 99774-9599</a></li>
+            </ul>
+          </div>
+            <div class="col-6 col-md">
+              <h6>Endereço</h6>
+              <ul class="list-unstyled text-small">
+                <i class="bi bi-geo-alt-fill"></i> Rua Piauí, 1657 - Sala 11 - Santa Maria - Uberaba/MG</p></a>
+                <p><a class="btn btn-dark" href="https://www.google.com/maps/dir//Studio+SCODA/@-19.7502681,-48.0314836,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x94bad176cf661c8d:0xe4baee0d3cff663c!2m2!1d-47.9614432!2d-19.7502817" target="_blank"><b>Como chegar</b></a></p>
+            </ul>
+            </div>
+    </div>
+    <hr>
+</section>
+  
+<footer>
+    <p class="float-end"><a style="color: blueviolet;" href="#">Volte ao topo</a></p>
+</footer>
+
+<p class="mt-5 mb-3 text-muted desenvolvimento">&copy; Desenvolvido por Aline Viana</p>
+
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+body {
+    background-color: thistle;
+}
+
+.logo {
+    background-color:black;
+    color: white;
+    text-align: left;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.carousel-item {
+   margin-top: 50px;
+}
+
+.studio {
+    margin-top: 70px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.lead {
+    font-size: 18px;
+}
+
+.servicos {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.title {
+    font-size: 26px;
+    text-align: center;
+    font-family: "Montserrat";
+    margin: 10px;
+    padding: 10px;
+    color: rgba(24, 11, 29, 0.589);
+    font-weight: bolder;
+}
+
+.procedimentos {
+    background-image: linear-gradient(#a34fa3 0%, #fbc2eb 135%);
+    color: rgba(77, 7, 65, 0.87);
+    font-size: 13px;
+    text-align: center;
+    margin: 6px;
+    padding: 10px;
+    border-radius: 1%;
+}
+
+.zoom {
+    overflow: hidden;
+}
+
+.zoom img {
+    max-width: 100%;
+    -moz-transition: all 0.3;
+    -webkit-transition: all 0.3;
+    transition: all 0.3;
+}
+
+.zoom:hover img {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+.image {
+    width: 135px;
+    height: 100px;
+    border-radius: 4%;
+}
+
+
+.email{
+ text-align: center; 
+ padding-bottom: 30px;   
+}
+
+.subtitle1 {
+    font-size: 23px;
+    color: rgba(24, 11, 29, 0.589);
+}
+
+.midias {
+    line-height: 180%;
+    text-align: center;
+    margin: 60px;
+}
+
+.link {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    margin-top: 50px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 10px;
+}
+
+
+.col-6 {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.image1 {
+    width: 200px;
+    height: 180px;
+    border-radius: 4%;
+}
+
+.link-secondary {
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.desenvolvimento {
+    text-align: center;
+}
+
+
+
+
